@@ -443,7 +443,7 @@ void CHyprBar::draw(CMonitor* pMonitor, float a, const Vector2D& offset) {
         glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
     }
 
-    g_pHyprOpenGL->renderRect(&titleBarBox, color, scaledRounding);
+    g_pHyprOpenGL->renderRectWithBlur(&titleBarBox, color, scaledRounding);
 
     // render title
     if (*PENABLETITLE && (m_szLastTitle != m_pWindow->m_szTitle || m_bWindowSizeChanged || m_tTextTex.m_iTexID == 0)) {
